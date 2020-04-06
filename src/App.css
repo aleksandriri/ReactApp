@@ -1,0 +1,10 @@
+h1{
+    margin: 0;
+}
+.app{
+    height: 100vh;
+}
+.content__wrapper{
+    overflow-x: hidden;
+    height: 100%;
+}
