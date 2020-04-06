@@ -11,11 +11,7 @@ let filmData = [
     {name: 'Film 6'},
     {name: 'Film 7'},
     {name: 'Film 8'},
-    {name: 'Film 9'},
-    {name: 'Film 9'},
-    {name: 'Film 9'},
-    {name: 'Film 9'},
-    {name: 'Film 9'},
+    {name: 'Film 9'}
 ];
 
 const Main = (props) => {
