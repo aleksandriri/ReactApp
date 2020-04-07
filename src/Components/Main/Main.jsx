@@ -17,7 +17,16 @@ let filmData = [
 const Main = (props) => {
     return (
         <main className={style.main}>
-            <Block name={filmData[0].name} poster={filmData[0].poster}/>
+            <div className={style.main__header}>
+                <div className={style.main__title__inner}>
+                    <h1 className={style.main__title}>Скачать новые сериалы и фильмы</h1>
+                </div>
+                <div className={style.main__search__inner}>
+                    <div className={style.search__inner}>
+                        <input type="text"/>
+                    </div>
+                </div>
+            </div>
             <Block name={filmData[0].name} poster={filmData[0].poster}/>
             <Block name={filmData[0].name} poster={filmData[0].poster}/>
             <Block name={filmData[0].name} poster={filmData[0].poster}/>

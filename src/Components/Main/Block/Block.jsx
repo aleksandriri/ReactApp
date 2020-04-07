@@ -5,7 +5,7 @@ const Block = (props) => {
     return (
         <div className={style.main__item}>
             <img alt="example" src={props.poster} />
-            {props.name}
+            <span>{props.name}</span>
         </div>
     );
 };

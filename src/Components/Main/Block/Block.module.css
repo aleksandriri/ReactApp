@@ -2,9 +2,14 @@
     cursor: pointer;
     width: 100%;
     margin: 5px;
-    max-width: 200px;
+    max-width: 230px;
     margin-bottom: 15px;
 }
 .main__item img{
     width: 100%;
+}
+.main__item span{
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-size: 18px;
 }

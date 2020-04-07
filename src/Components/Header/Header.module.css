@@ -46,3 +46,9 @@
     color: #fff;
     text-decoration: none;
 }
+.nav .nav__link{
+    margin: 0 0 20px 0;
+}
+.nav .nav__link:last-child{
+    margin: 0;
+}
