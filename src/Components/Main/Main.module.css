@@ -1,7 +1,11 @@
 .main{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-    background:#f0f0f0;
+    flex: 1 1 auto;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #222;
 }
