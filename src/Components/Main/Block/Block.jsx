@@ -6,9 +6,9 @@ const { Meta } = Card;
 const Block = (props) => {
   return (
     <Card className={style.main__item} cover={<img alt="example" src={props.url} />}>
-        <Meta title={props.name} />
+        <Meta title={props.name} name={props.name}/>
     </Card>
   );
-}
+};
 
 export default Block;
