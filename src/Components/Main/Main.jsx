@@ -4,7 +4,7 @@ import Block from './Block/Block'
 
 let filmData = [
     {name: 'Film 1', poster: 'https://upload.wikimedia.org/wikipedia/ru/0/0c/Black_Panther_film_poster.jpg'},
-    {name: 'Film 2'},
+    {name: 'Film 2', poster: 'https://upload.wikimedia.org/wikipedia/ru/0/0c/Black_Panther_film_poster.jpg'},
     {name: 'Film 3'},
     {name: 'Film 4'},
     {name: 'Film 5'},
