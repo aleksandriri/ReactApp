@@ -52,3 +52,6 @@
 .nav .nav__link:last-child{
     margin: 0;
 }
+.nav .nav__link.active{
+    color: #53c1de;
+}

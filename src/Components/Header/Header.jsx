@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './Header.module.css'
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
     return (
@@ -9,10 +10,10 @@ const Header = () => {
                     <img src="https://web-creator.ru/uploads/Page/25/react.svg" alt=""/>
                 </div>
                 <nav className={style.nav}>
-                    <a className={style.nav__link} href="/film">Фильмы</a>
-                    <a className={style.nav__link} href="/serial">Сериалы</a>
-                    <a className={style.nav__link} href="/cartoon">Мультфильмы</a>
-                    <a className={style.nav__link} href="/settings">Настройки</a>
+                    <NavLink className={style.nav__link} to="/film" activeClassName={style.active}>Фильмы</NavLink>
+                    <NavLink className={style.nav__link} to="/serial" activeClassName={style.active}>Сериалы</NavLink>
+                    <NavLink className={style.nav__link} to="/cartoon" activeClassName={style.active}>Мультфильмы</NavLink>
+                    <NavLink className={style.nav__link} to="/settings" activeClassName={style.active}>Настройки</NavLink>
                 </nav>
             </div>
         </div>
