@@ -3,6 +3,7 @@
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     flex: 1 1 auto;
@@ -24,4 +25,7 @@
 }
 .main__title__inner{
     flex-grow: 1;
+}
+.main__body{
+    height: 100%;
 }

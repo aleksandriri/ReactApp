@@ -6,6 +6,7 @@ const Search = (props) => {
         <div className={style.main__search__inner}>
             <div className={style.search__inner}>
                 <input type="text"/>
+                <button type="button">Search</button>
             </div>
         </div>
     );
