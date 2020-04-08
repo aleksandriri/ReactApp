@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Main.module.css'
 import Block from './Block/Block'
+import Search from "./Search/Search"
 
 let filmData = [
     {name: 'Film 1', poster: 'https://upload.wikimedia.org/wikipedia/ru/0/0c/Black_Panther_film_poster.jpg'},
@@ -13,6 +14,14 @@ let filmData = [
     {name: 'Film 8'},
     {name: 'Film 9'}
 ];
+function searchMovie(){
+    fetch('http://www.omdbapi.com/?s=${movie}&apikey=${key}')
+}
+let key = '57ed170a';
+let movie = 'Iron';
+let link = `http://www.omdbapi.com/?s=${movie}&apikey=${key}`;
+console.log(link);
+
 
 const Main = (props) => {
     return (
@@ -21,11 +30,7 @@ const Main = (props) => {
                 <div className={style.main__title__inner}>
                     <h1 className={style.main__title}>Скачать новые сериалы и фильмы</h1>
                 </div>
-                <div className={style.main__search__inner}>
-                    <div className={style.search__inner}>
-                        <input type="text"/>
-                    </div>
-                </div>
+                <Search />
             </div>
             <Block name={filmData[0].name} poster={filmData[0].poster}/>
             <Block name={filmData[0].name} poster={filmData[0].poster}/>
