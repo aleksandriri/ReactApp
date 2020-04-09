@@ -1,13 +1,13 @@
 import React from 'react';
-import style from './Header.module.css'
+import style from './Navigation.module.css'
 import {NavLink} from "react-router-dom";
 
-const Header = () => {
+const Navigation = () => {
     return (
-        <div className={style.header}>
-            <div className={style.header__inner}>
-                <div className={style.header__logo}>
-                    <img src="https://web-creator.ru/uploads/Page/25/react.svg" alt=""/>
+        <div className={style.navigation}>
+            <div className={style.navigation__inner}>
+                <div className={style.navigation__logo}>
+                    <img src="https://web-creator.ru/uploads/Page/25/react.svg" alt="React"/>
                 </div>
                 <nav className={style.nav}>
                     <NavLink className={style.nav__link} to="/film" activeClassName={style.active}>Фильмы</NavLink>
@@ -20,4 +20,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navigation;

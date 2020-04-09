@@ -11,10 +11,10 @@ let filmData = [
 const Film = (props) => {
     return (
         <div className="inner">
-            <NavLink to="">
+            <NavLink to="/page">
                 <Block name={filmData[0].name} poster={filmData[0].poster}/>
             </NavLink>
-            <NavLink to="">
+            <NavLink to="/page">
                 <Block name={filmData[1].name} poster={filmData[1].poster}/>
             </NavLink>
         </div>

@@ -1,0 +1,14 @@
+.main__header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.main__title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+    color: #ffffff;
+}
+.main__title__inner{
+    flex-grow: 1;
+}
