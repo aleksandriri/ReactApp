@@ -7,10 +7,11 @@
     justify-content: space-between;
     flex-wrap: wrap;
     flex: 1 1 auto;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
     overflow: hidden;
-    background-color: #222;
-    padding: 20px;
+    padding: 40px 20px;
 }
 .main__body{
     height: 100%;
