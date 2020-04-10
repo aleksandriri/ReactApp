@@ -10,7 +10,7 @@ const App = (props) => {
             <div className="app">
                 <div className="app__inner">
                     <Header/>
-                    <Main/>
+                    <Main FilmData={props.FilmData}/>
                 </div>
             </div>
         </BrowserRouter>

@@ -5,7 +5,6 @@ const Page = (props) => {
     return (
         <div className={style.page}>
             <h1>SINGLE PAGE</h1>
-            <p>{props.desrc}</p>
         </div>
     );
 };
