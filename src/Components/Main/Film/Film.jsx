@@ -28,7 +28,7 @@ let BlockElements = FilmData.map((film) => {
             <Block name={film.name} poster={film.poster}/>
         </NavLink>
     )
-} );
+});
 
 const Film = (props) => {
     return (

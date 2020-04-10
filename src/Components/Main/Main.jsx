@@ -11,13 +11,13 @@ import {Route} from 'react-router-dom'
 const Main = (props) => {
     return (
         <main className={style.main}>
-            <Route path='/' component={Header}/>
+            <Route path='/' render={() => <Header/>}/>
             <div className={style.main__body}>
-                <Route path='/film' component={Film}/>
-                <Route path='/serial' component={Serial}/>
-                <Route path='/cartoon' component={Cartoon}/>
-                <Route path='/settings' component={Settings}/>
-                <Route path='/page' component={Page}/>
+                <Route path='/film' render={() => <Film/>}/>
+                <Route path='/serial' render={() => <Serial/>}/>
+                <Route path='/cartoon' render={() => <Cartoon/>}/>
+                <Route path='/settings' render={() => <Settings/>}/>
+                <Route path='/page' render={() => <Page/>}/>
             </div>
         </main>
     );
