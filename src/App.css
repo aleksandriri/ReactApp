@@ -48,3 +48,8 @@ h1{
     -ms-flex-align: start;
     align-items: flex-start;
 }
+.main__inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

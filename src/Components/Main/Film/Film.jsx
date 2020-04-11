@@ -4,7 +4,7 @@ import Block from '../Block/Block'
 import {NavLink} from "react-router-dom";
 
 const Film = (props) => {
-    let BlockElements = props.FilmData.map((film) => {
+    let BlockElements = props.state.map((film) => {
         return (
             <NavLink to="/page">
                 <Block name={film.name} poster={film.poster}/>
@@ -12,7 +12,7 @@ const Film = (props) => {
         )
     });
     return (
-        <div className={style.inner}>
+        <div className={style.inner + ' ' + 'main__inner'}>
             {BlockElements}
         </div>
     );
