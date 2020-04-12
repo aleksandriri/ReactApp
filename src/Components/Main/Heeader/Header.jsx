@@ -2,7 +2,6 @@ import React from 'react';
 import style from './Header.module.css'
 import Search from "./Search/Search"
 import {Route} from "react-router-dom";
-import Film from "../Film/Film";
 
 const Header = (props) => {
     return (

@@ -6,8 +6,8 @@ import { SearchOutlined } from '@ant-design/icons';
 const Search = (props) => {
     let searchElem = React.createRef();
     let searchBtn = () => {
-        debugger;
         let searchVal = searchElem.current.value;
+        searchElem.current.value = '';
         props.addBlock(searchVal);
     };
     return (
