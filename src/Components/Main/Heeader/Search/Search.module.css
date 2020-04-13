@@ -2,5 +2,33 @@
 
 }
 .search__inner{
-
+    position: relative;
+}
+.search__input{
+    background: #ffffff;
+    height: 38px;
+    outline: none;
+    border: none;
+    color: #222222;
+    font-size: 21px;
+    padding: 0 0 0 15px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 22px;
+    border-top-right-radius: 22px;
+}
+.search__btn{
+    position: absolute;
+    right: 0;
+    background: #313131;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 18px;
+    padding: 7px 10px;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    outline: none;
+}
+.search__btn:hover{
+    outline: none;
 }

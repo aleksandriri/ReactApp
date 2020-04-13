@@ -6,12 +6,15 @@ import Cartoon from "./Cartoon/Cartoon";
 import Settings from "./Settings/Settings";
 import Page from "./Page/Page";
 import Header from "./Heeader/Header";
-import {Route} from 'react-router-dom'
+import {Route} from 'react-router-dom';
 
 const Main = (props) => {
     return (
         <main className={style.main}>
-            <Route path='/' render={() => <Header addBlock={props.addBlock}/>}/>
+            <Route path='/' render={() => <Header stateSearch={props.state.newSearchText}
+                                                  addBlock={props.addBlock}
+                                                  updateSearch={props.updateSearch}/>}
+            />
             <div className={style.main__body}>
                 <Route path='/film' render={() => <Film stateFilm={props.state.FilmData}/>}/>
                 <Route path='/serial' render={() => <Serial stateSerial={props.state.SerialData}/>}/>

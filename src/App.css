@@ -53,3 +53,7 @@ h1{
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.main__block__item{
+    text-decoration: none;
+    margin: 0 0 35px 0;
+}

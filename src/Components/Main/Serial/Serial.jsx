@@ -6,7 +6,7 @@ import Block from "../Block/Block";
 const Serial = (props) => {
     let BlockElements = props.stateSerial.map((serial) => {
         return (
-            <NavLink to="/page">
+            <NavLink className={'main__block__item'} to="/page">
                 <Block name={serial.name} poster={serial.poster}/>
             </NavLink>
         )

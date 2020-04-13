@@ -1,5 +1,6 @@
-import {rerenderEntireTree} from '../Render';
-
+let rerenderEntireTree = () => {
+    console.log('State change');
+};
 let key = '57ed170a';
 let link = `http://www.omdbapi.com/?apikey=${key}&s=guns`;
 console.log(link);
@@ -40,16 +41,28 @@ let stateRedux = {
             name: 'The Money Pit',
             poster: 'https://m.media-amazon.com/images/M/MV5BNDJmNTZkMDMtOWU5ZS00N2ZlLWIxN2EtZTI4NzBhODc0MmRjL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg'
         }
-    ]
-}
+    ],
+    newSearchText: ''
+};
 
-export let addBlock = (BlockInfo) =>{
+window.stateRedux = stateRedux;
+
+export const addBlock = () => {
     let newBlock = {
-        name: BlockInfo,
+        name: stateRedux.newSearchText,
         poster: 'https://m.media-amazon.com/images/M/MV5BMjM3ODY3Njc5Ml5BMl5BanBnXkFtZTgwMjQ5NjM5MTI@._V1_SX300.jpg'
     };
     stateRedux.FilmData.push(newBlock);
     rerenderEntireTree(stateRedux);
+};
+
+export const updateNewSearchText = (newText) => {
+    stateRedux.newSearchText = newText;
+    rerenderEntireTree(stateRedux);
+};
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 };
 
 export default stateRedux;
