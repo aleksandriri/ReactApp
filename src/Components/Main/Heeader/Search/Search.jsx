@@ -16,7 +16,7 @@ const Search = (props) => {
     return (
         <div className={style.main__search__inner}>
             <div className={style.search__inner}>
-                <input className={style.search__input}
+                <input className={style.search__input + ' ' + 'testss'}
                        type="text" ref={searchElem}
                        onChange={onSearchChange}
                        value={props.stateSearch}
