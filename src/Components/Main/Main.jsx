@@ -11,10 +11,7 @@ import {Route} from 'react-router-dom';
 const Main = (props) => {
     return (
         <main className={style.main}>
-            <Route path='/' render={() => <Header stateSearch={props.state.newSearchText}
-                                                  addBlock={props.addBlock}
-                                                  updateSearch={props.updateSearch}/>}
-            />
+            <Route path='/' render={() => <Header stateSearch={props.state.newSearchText} dispatch={props.dispatch}/>}/>
             <div className={style.main__body}>
                 <Route path='/film' render={() => <Film stateFilm={props.state.FilmData}/>}/>
                 <Route path='/serial' render={() => <Serial stateSerial={props.state.SerialData}/>}/>

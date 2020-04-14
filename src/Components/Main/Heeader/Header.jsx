@@ -8,7 +8,7 @@ const Header = (props) => {
             <div className={style.main__title__inner}>
                 <h1 className={style.main__title}>Скачать новые сериалы и фильмы</h1>
             </div>
-            <Search stateSearch={props.stateSearch} addBlock={props.addBlock} updateSearch={props.updateSearch}/>
+            <Search stateSearch={props.stateSearch} dispatch={props.dispatch}/>
         </div>
     );
 };

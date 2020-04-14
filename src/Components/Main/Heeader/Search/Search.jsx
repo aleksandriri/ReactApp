@@ -6,12 +6,11 @@ import { SearchOutlined } from '@ant-design/icons';
 const Search = (props) => {
     let searchElem = React.createRef();
     let searchBtn = () => {
-        props.addBlock();
-        props.updateSearch('');
+        props.dispatch({ type: 'ADD-BLOCK' });
     };
     let onSearchChange = () => {
         let searchVal = searchElem.current.value;
-        props.updateSearch(searchVal);
+        props.dispatch({ type: 'UPDATE-NEW-SEARCH-TEXT', newText: searchVal});
     };
     return (
         <div className={style.main__search__inner}>
