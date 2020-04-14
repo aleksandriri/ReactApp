@@ -8,7 +8,7 @@ const App = (props) => {
         <div className="app">
             <div className="app__inner">
                 <Navigation/>
-                <Main state={props.state} addBlock={props.addBlock} updateSearch={props.updateSearch}/>
+                <Main state={props.state} dispatch={props.dispatch}/>
             </div>
         </div>
     );

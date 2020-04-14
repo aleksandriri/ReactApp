@@ -42,26 +42,28 @@ let store = {
         ],
         newSearchText: ''
     },
-    getState () {
-        return this._stateRedux;
-    },
     _callSubscriber () {
         console.log('State change');
     },
-    addBlock () {
-        let newBlock = {
-            name: this._stateRedux.newSearchText,
-            poster: 'https://m.media-amazon.com/images/M/MV5BMjM3ODY3Njc5Ml5BMl5BanBnXkFtZTgwMjQ5NjM5MTI@._V1_SX300.jpg'
-        };
-        this._stateRedux.FilmData.push(newBlock);
-        this._callSubscriber(this._stateRedux);
-    },
-    updateNewSearchText (newText) {
-        this._stateRedux.newSearchText = newText;
-        this._callSubscriber(this._stateRedux);
+    getState () {
+        return this._stateRedux;
     },
     subscribe (observer) {
         this._callSubscriber = observer;
+    },
+    dispatch (action) {
+        if(action.type === 'ADD-BLOCK'){
+            let newBlock = {
+                name: this._stateRedux.newSearchText,
+                poster: 'https://m.media-amazon.com/images/M/MV5BMjM3ODY3Njc5Ml5BMl5BanBnXkFtZTgwMjQ5NjM5MTI@._V1_SX300.jpg'
+            };
+            this._stateRedux.FilmData.push(newBlock);
+            this._stateRedux.FilmData.newSearchText = '';
+            this._callSubscriber(this._stateRedux);
+        } else if (action.type === 'UPDATE-NEW-SEARCH-TEXT') {
+            this._stateRedux.newSearchText = action.newText;
+            this._callSubscriber(this._stateRedux);
+        }
     }
 };
 
