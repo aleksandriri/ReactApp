@@ -1,10 +1,6 @@
-let key = '57ed170a';
-let link = `http://www.omdbapi.com/?apikey=${key}&s=guns`;
-console.log(link);
-
 let store = {
     _stateRedux : {
-        FilmData:[
+        FilmData: [
             {
                 name: 'Iron Man',
                 poster: 'https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg'
@@ -22,7 +18,7 @@ let store = {
                 poster: 'https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg'
             }
         ],
-        SerialData:[
+        SerialData: [
             {
                 name: 'Friends',
                 poster: 'https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg'
@@ -52,7 +48,7 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch (action) {
-        if(action.type === 'ADD-BLOCK'){
+        if (action.type === 'ADD-BLOCK') {
             let newBlock = {
                 name: this._stateRedux.newSearchText,
                 poster: 'https://m.media-amazon.com/images/M/MV5BMjM3ODY3Njc5Ml5BMl5BanBnXkFtZTgwMjQ5NjM5MTI@._V1_SX300.jpg'
@@ -62,6 +58,21 @@ let store = {
             this._callSubscriber(this._stateRedux);
         } else if (action.type === 'UPDATE-NEW-SEARCH-TEXT') {
             this._stateRedux.newSearchText = action.newText;
+            const requestOnSearch = () => new Promise((resolves) => {
+                debugger;
+                const key = '57ed170a';
+                const api = `http://www.omdbapi.com/?apikey=${key}&t=${action.newText}`;
+                const request = new XMLHttpRequest()
+                request.open('GET', api)
+                request.onload = () => {
+                    if (request.status === 200) {
+                        resolves(JSON.parse(request.response).results)
+                    }
+                }
+                request.send();
+                console.log(request.response);
+            });
+            requestOnSearch();
             this._callSubscriber(this._stateRedux);
         }
     }
