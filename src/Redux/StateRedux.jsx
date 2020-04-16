@@ -1,3 +1,6 @@
+const ADD_BLOCK = 'ADD-BLOCK';
+const UPDATE_NEW_SEARCH_TEXT = 'UPDATE-NEW-SEARCH-TEXT';
+
 let store = {
     _stateRedux : {
         FilmData: [
@@ -48,7 +51,7 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch (action) {
-        if (action.type === 'ADD-BLOCK') {
+        if (action.type === ADD_BLOCK) {
             let newBlock = {
                 name: this._stateRedux.newSearchText,
                 poster: 'https://m.media-amazon.com/images/M/MV5BMjM3ODY3Njc5Ml5BMl5BanBnXkFtZTgwMjQ5NjM5MTI@._V1_SX300.jpg'
@@ -56,7 +59,7 @@ let store = {
             this._stateRedux.FilmData.push(newBlock);
             this._stateRedux.FilmData.newSearchText = '';
             this._callSubscriber(this._stateRedux);
-        } else if (action.type === 'UPDATE-NEW-SEARCH-TEXT') {
+        } else if (action.type === UPDATE_NEW_SEARCH_TEXT) {
             this._stateRedux.newSearchText = action.newText;
             const requestOnSearch = () => new Promise((resolves) => {
                 debugger;
@@ -75,6 +78,17 @@ let store = {
             requestOnSearch();
             this._callSubscriber(this._stateRedux);
         }
+    }
+};
+
+export const addBlockActionCreator = () => {
+    return {
+        type: ADD_BLOCK
+    }
+};
+export const onSearchActionCreator = (searchVal) => {
+    return {
+        type: UPDATE_NEW_SEARCH_TEXT, newText: searchVal
     }
 };
 
