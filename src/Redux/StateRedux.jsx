@@ -61,21 +61,28 @@ let store = {
             this._callSubscriber(this._stateRedux);
         } else if (action.type === UPDATE_NEW_SEARCH_TEXT) {
             this._stateRedux.newSearchText = action.newText;
-            const requestOnSearch = () => new Promise((resolves) => {
-                debugger;
-                const key = '57ed170a';
-                const api = `http://www.omdbapi.com/?apikey=${key}&t=${action.newText}`;
-                const request = new XMLHttpRequest()
-                request.open('GET', api)
-                request.onload = () => {
-                    if (request.status === 200) {
-                        resolves(JSON.parse(request.response).results)
-                    }
-                }
-                request.send();
-                console.log(request.response);
-            });
-            requestOnSearch();
+            const getResponse = async () => {
+                let key = '57ed170a';
+                let response = await fetch(`http://www.omdbapi.com/?apikey=${key}&s=${action.newText}`);
+                let responseBlock = await response.json();
+                console.log(responseBlock);
+            }
+            getResponse();
+            // const requestOnSearch = () => new Promise((resolves) => {
+            //     debugger;
+            //     const key = '57ed170a';
+            //     const api = `http://www.omdbapi.com/?apikey=${key}&t=${action.newText}`;
+            //     const request = new XMLHttpRequest()
+            //     request.open('GET', api)
+            //     request.onload = () => {
+            //         if (request.status === 200) {
+            //             resolves(JSON.parse(request.response).results)
+            //         }
+            //     }
+            //     request.send();
+            //     console.log(request.response);
+            // });
+            // requestOnSearch();
             this._callSubscriber(this._stateRedux);
         }
     }
