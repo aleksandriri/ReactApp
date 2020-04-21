@@ -66,7 +66,7 @@ let store = {
                 let response = await fetch(`http://www.omdbapi.com/?apikey=${key}&s=${action.newText}`);
                 let responseBlock = await response.json();
                 console.log(responseBlock);
-            }
+            };
             getResponse();
             // const requestOnSearch = () => new Promise((resolves) => {
             //     debugger;
