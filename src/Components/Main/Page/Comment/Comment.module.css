@@ -1,0 +1,19 @@
+.comments__wrapper{
+
+}
+.comment__item{
+
+}
+.comments__textarea{
+    width: 100%;
+    box-sizing: border-box;
+}
+.comments__send{
+
+}
+.comments__input{
+    margin-bottom: 15px;
+}
+textarea{
+    margin: 0;
+}

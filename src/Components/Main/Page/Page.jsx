@@ -1,10 +1,12 @@
 import React from 'react';
-import style from './Page.module.css'
+import style from './Page.module.css';
+import Comment from "./Comment/Comment";
+
 
 const Page = (props) => {
     return (
         <div className={style.page}>
-            <h1>SINGLE PAGE</h1>
+            <Comment statePage={props.statePage}/>
         </div>
     );
 };

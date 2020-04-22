@@ -15,9 +15,9 @@ const Main = (props) => {
             <div className={style.main__body}>
                 <Route path='/film' render={() => <Film stateFilm={props.state.FilmData}/>}/>
                 <Route path='/serial' render={() => <Serial stateSerial={props.state.SerialData}/>}/>
-                <Route path='/cartoon' render={() => <Cartoon/>}/>
-                <Route path='/settings' render={() => <Settings/>}/>
-                <Route path='/page' render={() => <Page/>}/>
+                <Route path='/cartoon' render={() => <Cartoon />}/>
+                <Route path='/settings' render={() => <Settings />}/>
+                <Route path='/page' render={() => <Page statePage={props.state.PageCommentsData}/>}/>
             </div>
         </main>
     );

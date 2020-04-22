@@ -7,12 +7,12 @@ const Film = (props) => {
     let BlockElements = props.stateFilm.map((film) => {
         return (
             <NavLink className={'main__block__item'} to="/page">
-                <Block name={film.name} poster={film.poster}/>
+                <Block key={film.id} name={film.name} poster={film.poster}/>
             </NavLink>
-        )
+        );
     });
     return (
-        <div className={style.inner + ' ' + 'main__inner'}>
+        <div className={'inner'}>
             {BlockElements}
         </div>
     );

@@ -7,12 +7,12 @@ const Serial = (props) => {
     let BlockElements = props.stateSerial.map((serial) => {
         return (
             <NavLink className={'main__block__item'} to="/page">
-                <Block name={serial.name} poster={serial.poster}/>
+                <Block key={serial.id} name={serial.name} poster={serial.poster}/>
             </NavLink>
         )
     });
     return (
-        <div className={style.inner + ' ' + 'main__inner'}>
+        <div className={'inner'}>
             {BlockElements}
         </div>
     );

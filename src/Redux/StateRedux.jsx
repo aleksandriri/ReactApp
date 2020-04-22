@@ -1,5 +1,6 @@
 const ADD_BLOCK = 'ADD-BLOCK';
 const UPDATE_NEW_SEARCH_TEXT = 'UPDATE-NEW-SEARCH-TEXT';
+const ADD_COMMENT = 'ADD-COMMENT';
 
 let store = {
     _stateRedux : {
@@ -39,6 +40,38 @@ let store = {
                 poster: 'https://m.media-amazon.com/images/M/MV5BNDJmNTZkMDMtOWU5ZS00N2ZlLWIxN2EtZTI4NzBhODc0MmRjL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg'
             }
         ],
+        PageCommentsData: [
+            {
+                name: 'Саша',
+                comment : 'Assure polite his really and others figure though. Day age advantages end sufficient eat expression travelling.',
+                like: 0
+            },
+            {
+                name: 'Оля',
+                comment : 'Started earnest brother believe an exposed so. Me he believing daughters if forfeited at furniture.',
+                like: 0
+            },
+            {
+                name: 'Алина',
+                comment : 'They why quit gay cold rose deal park. One same they four did ask busy. Reserved opinions fat him nay position.',
+                like: 0
+            },
+            {
+                name: 'Ника',
+                comment : 'Rose to shew bore no ye of paid rent form. Old design are dinner better nearer silent excuse.',
+                like: 0
+            },
+            {
+                name: 'Вика',
+                comment : 'Favour of so as on pretty though elinor direct. Reasonable estimating be alteration we themselves entreaties me of reasonably.',
+                like: 0
+            },
+            {
+                name: 'Даша',
+                comment : 'Sportsman one bed departure rapturous situation disposing his. Off say yet ample ten ought hence.',
+                like: 0
+            }
+        ],
         newSearchText: ''
     },
     _callSubscriber () {
@@ -68,22 +101,9 @@ let store = {
                 console.log(responseBlock);
             };
             getResponse();
-            // const requestOnSearch = () => new Promise((resolves) => {
-            //     debugger;
-            //     const key = '57ed170a';
-            //     const api = `http://www.omdbapi.com/?apikey=${key}&t=${action.newText}`;
-            //     const request = new XMLHttpRequest()
-            //     request.open('GET', api)
-            //     request.onload = () => {
-            //         if (request.status === 200) {
-            //             resolves(JSON.parse(request.response).results)
-            //         }
-            //     }
-            //     request.send();
-            //     console.log(request.response);
-            // });
-            // requestOnSearch();
             this._callSubscriber(this._stateRedux);
+        } else if (action.type === ADD_COMMENT){
+
         }
     }
 };
@@ -96,6 +116,12 @@ export const addBlockActionCreator = () => {
 export const onSearchActionCreator = (searchVal) => {
     return {
         type: UPDATE_NEW_SEARCH_TEXT, newText: searchVal
+    }
+};
+
+export  const onSendMessageActionCreator = (messageVal) => {
+    return {
+        type: UPDATE_NEW_SEARCH_TEXT, newText: messageVal
     }
 };
 
