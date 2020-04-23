@@ -1,6 +1,7 @@
 const ADD_BLOCK = 'ADD-BLOCK';
 const UPDATE_NEW_SEARCH_TEXT = 'UPDATE-NEW-SEARCH-TEXT';
 const ADD_COMMENT = 'ADD-COMMENT';
+const UPDATE_NEW_COMMENT_TEXT = 'UPDATE-NEW-COMMENT-TEXT';
 
 let store = {
     _stateRedux : {
@@ -72,6 +73,10 @@ let store = {
                 like: 0
             }
         ],
+        newCommentText: {
+            name: '',
+            commentBody: ''
+        },
         newSearchText: ''
     },
     _callSubscriber () {
@@ -103,6 +108,15 @@ let store = {
             getResponse();
             this._callSubscriber(this._stateRedux);
         } else if (action.type === ADD_COMMENT){
+            let newComment = {
+                name: this._stateRedux.newCommentText.name,
+                commentBody : this._stateRedux.newCommentText.commentBody
+            };
+            this._stateRedux.PageCommentsData.push(newComment);
+            // this._stateRedux.PageCommentsData.newCommentText.name = '';
+            // this._stateRedux.PageCommentsData.newCommentText.commentBody = '';
+            this._callSubscriber(this._stateRedux);
+        } else if (action.type === UPDATE_NEW_COMMENT_TEXT) {
 
         }
     }
@@ -113,6 +127,13 @@ export const addBlockActionCreator = () => {
         type: ADD_BLOCK
     }
 };
+
+export const addCommentActionCreator = () => {
+    return {
+        type: ADD_COMMENT
+    }
+};
+
 export const onSearchActionCreator = (searchVal) => {
     return {
         type: UPDATE_NEW_SEARCH_TEXT, newText: searchVal
@@ -121,7 +142,7 @@ export const onSearchActionCreator = (searchVal) => {
 
 export  const onSendMessageActionCreator = (messageVal) => {
     return {
-        type: UPDATE_NEW_SEARCH_TEXT, newText: messageVal
+        type: UPDATE_NEW_COMMENT_TEXT, newText: messageVal
     }
 };
 
