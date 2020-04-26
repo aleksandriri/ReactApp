@@ -6,7 +6,7 @@ import Comment from "./Comment/Comment";
 const Page = (props) => {
     return (
         <div className={style.page}>
-            <Comment statePage={props.statePage} dispatch={props.dispatch}/>
+            <Comment stateComment={props.statePage} dispatch={props.dispatch}/>
         </div>
     );
 };

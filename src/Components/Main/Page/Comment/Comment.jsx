@@ -3,15 +3,15 @@ import style from './Comment.module.css';
 import {addCommentActionCreator, onSendMessageActionCreator} from "../../../../Redux/StateRedux";
 
 const Comment = (props) => {
-    let commentElem = React.createRef();
     let addComment = () => {
         props.dispatch(addCommentActionCreator());
     };
-    let onCommentChange = () => {
-        let CommentVal = commentElem.current.value();
-        props.dispatch(onSendMessageActionCreator(CommentVal));
+    let onCommentChange = (event) => {
+        let CommentHeader = event.target.value;
+        let CommentBody = event.target.value;
+        props.dispatch(onSendMessageActionCreator(CommentHeader, CommentBody));
     };
-    let CommentElements = props.statePage.map((comment) => {
+    let CommentElements = props.stateComment.PageCommentsData.map((comment) => {
         return (
             <div className={style.comment__item}>
                 <h3>{comment.name}</h3>
@@ -23,11 +23,15 @@ const Comment = (props) => {
     return (
         <div className={style.comments__wrapper}>
             <div className={style.comments__send}>
-                <input className={style.comments__input} type="text" placeholder='Ваше Имя'/>
+                <input className={style.comments__input}
+                       type="text"
+                       placeholder='Ваше Имя'
+                       value={props.stateComment.newCommentText.header}
+                       onChange={onCommentChange}
+                />
                 <textarea className={style.comments__textarea}
                           placeholder='Ваш коментарий'
-                          rows="5" ref={commentElem}
-                          value={props.statePage}
+                          value={props.stateComment.newCommentText.body}
                           onChange={onCommentChange}>
                 </textarea>
                 <button onClick={addComment}>Коментировать</button>

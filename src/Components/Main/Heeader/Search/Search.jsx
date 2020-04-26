@@ -10,7 +10,7 @@ const Search = (props) => {
         props.dispatch(addBlockActionCreator());
     };
     let onSearchChange = () => {
-        let searchVal = searchElem.current.value;
+        let searchVal = searchElem.current.value();
         props.dispatch(onSearchActionCreator(searchVal));
     };
     return (
@@ -21,7 +21,11 @@ const Search = (props) => {
                        onChange={onSearchChange}
                        value={props.stateSearch}
                 />
-                <Button className={style.search__btn} type="primary" onClick={searchBtn} icon={<SearchOutlined />} />
+                <Button className={style.search__btn}
+                        type="primary"
+                        onClick={searchBtn}
+                        icon={<SearchOutlined />}
+                />
             </div>
         </div>
     );

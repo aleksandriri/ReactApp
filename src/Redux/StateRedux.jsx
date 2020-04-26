@@ -74,8 +74,8 @@ let store = {
             }
         ],
         newCommentText: {
-            name: '',
-            commentBody: ''
+            header: '',
+            body: ''
         },
         newSearchText: ''
     },
@@ -108,16 +108,18 @@ let store = {
             getResponse();
             this._callSubscriber(this._stateRedux);
         } else if (action.type === ADD_COMMENT){
+            debugger
             let newComment = {
-                name: this._stateRedux.newCommentText.name,
-                commentBody : this._stateRedux.newCommentText.commentBody
+                name : this._stateRedux.newCommentText.header,
+                comment : this._stateRedux.newCommentText.body,
+                like : 0
             };
             this._stateRedux.PageCommentsData.push(newComment);
-            // this._stateRedux.PageCommentsData.newCommentText.name = '';
-            // this._stateRedux.PageCommentsData.newCommentText.commentBody = '';
             this._callSubscriber(this._stateRedux);
         } else if (action.type === UPDATE_NEW_COMMENT_TEXT) {
-
+            this._stateRedux.newCommentText.header = action.newHeader;
+            this._stateRedux.newCommentText.body = action.newBody;
+            this._callSubscriber(this._stateRedux);
         }
     }
 };
@@ -140,9 +142,9 @@ export const onSearchActionCreator = (searchVal) => {
     }
 };
 
-export  const onSendMessageActionCreator = (messageVal) => {
+export  const onSendMessageActionCreator = (CommentHeader, CommentBody) => {
     return {
-        type: UPDATE_NEW_COMMENT_TEXT, newText: messageVal
+        type: UPDATE_NEW_COMMENT_TEXT, newHeader: CommentHeader , newBody: CommentBody
     }
 };
 
