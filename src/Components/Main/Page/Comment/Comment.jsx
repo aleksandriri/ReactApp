@@ -14,9 +14,9 @@ const Comment = (props) => {
     let CommentElements = props.stateComment.PageCommentsData.map((comment) => {
         return (
             <div className={style.comment__item}>
-                <h3>{comment.name}</h3>
-                <p>{comment.comment}</p>
-                <span>Like:{comment.like}</span>
+                <h3 className={style.comment__header}>{comment.name}</h3>
+                <p className={style.comment__body}>{comment.comment}</p>
+                <span className={style.comment__like}>Нравится: {comment.like}</span>
             </div>
         );
     });
