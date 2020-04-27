@@ -5,19 +5,18 @@ import { SearchOutlined } from '@ant-design/icons';
 import { addBlockActionCreator, onSearchActionCreator } from "../../../../Redux/StateRedux";
 
 const Search = (props) => {
-    let searchElem = React.createRef();
     let searchBtn = () => {
         props.dispatch(addBlockActionCreator());
     };
-    let onSearchChange = () => {
-        let searchVal = searchElem.current.value();
+    let onSearchChange = (event) => {
+        let searchVal = event.target.value;
         props.dispatch(onSearchActionCreator(searchVal));
     };
     return (
         <div className={style.main__search__inner}>
             <div className={style.search__inner}>
                 <input className={style.search__input}
-                       type="text" ref={searchElem}
+                       type="text"
                        onChange={onSearchChange}
                        value={props.stateSearch}
                 />
