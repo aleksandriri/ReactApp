@@ -6,9 +6,9 @@ const Comment = (props) => {
     let addComment = () => {
         props.dispatch(addCommentActionCreator());
     };
-    let onCommentChange = (event) => {
-        let CommentHeader = event.target.value;
-        let CommentBody = event.target.value;
+    let onCommentChange = (name, comment) => {
+        let CommentHeader = name.target.value;
+        let CommentBody = comment.target.value;
         props.dispatch(onSendMessageActionCreator(CommentHeader, CommentBody));
     };
     let CommentElements = props.stateComment.PageCommentsData.map((comment) => {

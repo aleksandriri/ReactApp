@@ -143,6 +143,7 @@ export const onSearchActionCreator = (searchVal) => {
 };
 
 export  const onSendMessageActionCreator = (CommentHeader, CommentBody) => {
+    debugger
     return {
         type: UPDATE_NEW_COMMENT_TEXT, newHeader: CommentHeader , newBody: CommentBody
     }
