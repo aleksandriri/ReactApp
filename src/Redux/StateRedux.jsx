@@ -1,7 +1,8 @@
 const ADD_BLOCK = 'ADD-BLOCK';
 const UPDATE_NEW_SEARCH_TEXT = 'UPDATE-NEW-SEARCH-TEXT';
 const ADD_COMMENT = 'ADD-COMMENT';
-const UPDATE_NEW_COMMENT_TEXT = 'UPDATE-NEW-COMMENT-TEXT';
+const UPDATE_NEW_COMMENT_TEXT_HEADER = 'UPDATE-NEW-COMMENT-TEXT-HEADER';
+const UPDATE_NEW_COMMENT_TEXT_BODY = 'UPDATE-NEW-COMMENT-TEXT-BODY';
 
 let store = {
     _stateRedux : {
@@ -73,10 +74,8 @@ let store = {
                 like: 0
             }
         ],
-        newCommentText: {
-            header: '',
-            body: ''
-        },
+        newCommentTextHeader: '',
+        newCommentTextBody: '',
         newSearchText: ''
     },
     _callSubscriber () {
@@ -108,17 +107,18 @@ let store = {
             getResponse();
             this._callSubscriber(this._stateRedux);
         } else if (action.type === ADD_COMMENT){
-            debugger
             let newComment = {
-                name : this._stateRedux.newCommentText.header,
-                comment : this._stateRedux.newCommentText.body,
+                name : this._stateRedux.newCommentTextHeader,
+                comment : this._stateRedux.newCommentTextBody,
                 like : 0
             };
             this._stateRedux.PageCommentsData.push(newComment);
             this._callSubscriber(this._stateRedux);
-        } else if (action.type === UPDATE_NEW_COMMENT_TEXT) {
-            this._stateRedux.newCommentText.header = action.newHeader;
-            this._stateRedux.newCommentText.body = action.newBody;
+        } else if (action.type === UPDATE_NEW_COMMENT_TEXT_HEADER) {
+            this._stateRedux.newCommentTextHeader = action.newHeader;
+            this._callSubscriber(this._stateRedux);
+        } else if (action.type === UPDATE_NEW_COMMENT_TEXT_BODY) {
+            this._stateRedux.newCommentTextBody = action.newBody;
             this._callSubscriber(this._stateRedux);
         }
     }
@@ -142,10 +142,15 @@ export const onSearchActionCreator = (searchVal) => {
     }
 };
 
-export  const onSendMessageActionCreator = (CommentHeader, CommentBody) => {
-    debugger
+export  const onSendCommentHeaderActionCreator = (CommentHeader) => {
     return {
-        type: UPDATE_NEW_COMMENT_TEXT, newHeader: CommentHeader , newBody: CommentBody
+        type: UPDATE_NEW_COMMENT_TEXT_HEADER, newHeader: CommentHeader
+    }
+};
+
+export  const onSendCommentBodyActionCreator = (CommentBody) => {
+    return {
+        type: UPDATE_NEW_COMMENT_TEXT_BODY, newBody: CommentBody
     }
 };
 

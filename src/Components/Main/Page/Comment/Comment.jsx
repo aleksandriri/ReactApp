@@ -1,15 +1,23 @@
 import React from 'react';
 import style from './Comment.module.css';
-import {addCommentActionCreator, onSendMessageActionCreator} from "../../../../Redux/StateRedux";
+import {
+    addCommentActionCreator,
+    onSendCommentHeaderActionCreator,
+    onSendCommentBodyActionCreator
+} from "../../../../Redux/StateRedux";
 
 const Comment = (props) => {
     let addComment = () => {
         props.dispatch(addCommentActionCreator());
     };
-    let onCommentChange = (name, comment) => {
+    let onCommentHeaderChange = (name) => {
         let CommentHeader = name.target.value;
+        props.dispatch(onSendCommentHeaderActionCreator(CommentHeader));
+    };
+    let onCommentBodyChange = (comment) => {
+
         let CommentBody = comment.target.value;
-        props.dispatch(onSendMessageActionCreator(CommentHeader, CommentBody));
+        props.dispatch(onSendCommentBodyActionCreator(CommentBody));
     };
     let CommentElements = props.stateComment.PageCommentsData.map((comment) => {
         return (
@@ -26,17 +34,17 @@ const Comment = (props) => {
                 <input className={style.comments__input}
                        type="text"
                        placeholder='Ваше Имя'
-                       value={props.stateComment.newCommentText.header}
-                       onChange={onCommentChange}
+                       value={props.stateComment.newCommentTextHeader}
+                       onChange={onCommentHeaderChange}
                 />
                 <textarea className={style.comments__textarea}
                           placeholder='Ваш коментарий'
-                          value={props.stateComment.newCommentText.body}
-                          onChange={onCommentChange}>
+                          value={props.stateComment.newCommentTextBody}
+                          onChange={onCommentBodyChange}>
                 </textarea>
                 <button onClick={addComment}>Коментировать</button>
             </div>
-            { CommentElements }
+            {CommentElements}
         </div>
     );
 };
