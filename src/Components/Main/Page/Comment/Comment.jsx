@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Comment.module.css';
-import { LikeOutlined } from '@ant-design/icons'
+import {HeartTwoTone} from '@ant-design/icons'
 import {
     addCommentActionCreator,
     onSendCommentHeaderActionCreator,
@@ -25,7 +25,7 @@ const Comment = (props) => {
             <div className={style.comment__item}>
                 <h3 className={style.comment__header}>{comment.name}</h3>
                 <p className={style.comment__body}>{comment.comment}</p>
-                <span className={style.comment__like}><LikeOutlined /> {comment.like}</span>
+                <span className={style.comment__like}><HeartTwoTone twoToneColor="#eb2f96" /> {comment.like}</span>
             </div>
         );
     });

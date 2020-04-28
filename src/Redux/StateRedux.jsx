@@ -57,21 +57,6 @@ let store = {
                 name: 'Алина',
                 comment : 'They why quit gay cold rose deal park. One same they four did ask busy. Reserved opinions fat him nay position.',
                 like: 0
-            },
-            {
-                name: 'Ника',
-                comment : 'Rose to shew bore no ye of paid rent form. Old design are dinner better nearer silent excuse.',
-                like: 0
-            },
-            {
-                name: 'Вика',
-                comment : 'Favour of so as on pretty though elinor direct. Reasonable estimating be alteration we themselves entreaties me of reasonably.',
-                like: 0
-            },
-            {
-                name: 'Даша',
-                comment : 'Sportsman one bed departure rapturous situation disposing his. Off say yet ample ten ought hence.',
-                like: 0
             }
         ],
         newCommentTextHeader: '',
@@ -94,7 +79,7 @@ let store = {
                 poster: 'https://m.media-amazon.com/images/M/MV5BMjM3ODY3Njc5Ml5BMl5BanBnXkFtZTgwMjQ5NjM5MTI@._V1_SX300.jpg'
             };
             this._stateRedux.FilmData.push(newBlock);
-            this._stateRedux.FilmData.newSearchText = '';
+            this._stateRedux.newSearchText = '';
             this._callSubscriber(this._stateRedux);
         } else if (action.type === UPDATE_NEW_SEARCH_TEXT) {
             this._stateRedux.newSearchText = action.newText;
@@ -113,6 +98,8 @@ let store = {
                 like : 0
             };
             this._stateRedux.PageCommentsData.push(newComment);
+            this._stateRedux.newCommentTextHeader = '';
+            this._stateRedux.newCommentTextBody = '';
             this._callSubscriber(this._stateRedux);
         } else if (action.type === UPDATE_NEW_COMMENT_TEXT_HEADER) {
             this._stateRedux.newCommentTextHeader = action.newHeader;
