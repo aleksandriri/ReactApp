@@ -4,7 +4,7 @@ import Block from '../Block/Block'
 import {NavLink} from "react-router-dom";
 
 const Film = (props) => {
-    let BlockElements = props.stateFilm.map((film) => {
+    let BlockElements = props.stateFilm.FilmData.map((film) => {
         return (
             <NavLink className={'main__block__item'} to="/page">
                 <Block key={film.id} name={film.name} poster={film.poster}/>

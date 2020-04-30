@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import Block from "../Block/Block";
 
 const Serial = (props) => {
-    let BlockElements = props.stateSerial.map((serial) => {
+    let BlockElements = props.stateSerial.SerialData.map((serial) => {
         return (
             <NavLink className={'main__block__item'} to="/page">
                 <Block key={serial.id} name={serial.name} poster={serial.poster}/>

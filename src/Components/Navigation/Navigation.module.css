@@ -1,18 +1,21 @@
 .navigation{
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 220px;
-    -ms-flex: 0 0 220px;
-    flex: 0 0 220px;
-    max-width: 220px;
+    -webkit-flex: 0 0 255px;
+    -ms-flex: 0 0 255px;
+    flex: 0 0 255px;
+    width: 100%;
+    max-width: 255px;
     overflow: hidden;
     overflow-y: auto;
     position: fixed;
-    width: 220px;
     height: 100%;
     top: 0;
     left: 0;
     bottom: 0;
-    background: #313131;
+    background: #0F2647;
+    box-shadow: 6px 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
 }
 .navigation__inner{
     display: -webkit-box;
@@ -23,9 +26,7 @@
     -ms-flex-direction: column;
     flex-direction: column;
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
+    flex-grow: 1;
     max-width: 100%;
     padding: 40px 20px;
 }
@@ -54,4 +55,12 @@
 }
 .nav .nav__link.active{
     color: #53c1de;
+}
+
+.navigation__footer{
+    background: #163158;
+    padding: 25px;
+}
+.navigation__support_avatar{
+    background: #ffffff;
 }

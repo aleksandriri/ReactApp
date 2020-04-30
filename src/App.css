@@ -14,10 +14,9 @@ h1{
     display: -ms-flexbox;
     display: flex;
     min-height: 100vh;
-    min-width: 320px;
     margin: 0 auto;
     position: relative;
-    padding-left: 220px;
+    padding-left: 255px;
 }
 /* width */
 ::-webkit-scrollbar {

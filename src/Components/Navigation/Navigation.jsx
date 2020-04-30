@@ -16,6 +16,9 @@ const Navigation = () => {
                     <NavLink className={style.nav__link} to="/settings" activeClassName={style.active}>Настройки</NavLink>
                 </nav>
             </div>
+            <div className={style.navigation__footer}>
+
+            </div>
         </div>
     );
 };

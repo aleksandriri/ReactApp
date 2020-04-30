@@ -13,11 +13,11 @@ const Main = (props) => {
         <main className={style.main}>
             <Route path='/' render={() => <Header stateSearch={props.state.newSearchText} dispatch={props.dispatch}/>}/>
             <div className={style.main__body}>
-                <Route path='/film' render={() => <Film stateFilm={props.state.FilmData}/>}/>
-                <Route path='/serial' render={() => <Serial stateSerial={props.state.SerialData}/>}/>
+                <Route path='/film' render={() => <Film stateFilm={props.state.filmPage}/>}/>
+                <Route path='/serial' render={() => <Serial stateSerial={props.state.serialPage}/>}/>
                 <Route path='/cartoon' render={() => <Cartoon />}/>
                 <Route path='/settings' render={() => <Settings />}/>
-                <Route path='/page' render={() => <Page statePage={props.state} dispatch={props.dispatch}/>}/>
+                <Route path='/page' render={() => <Page statePage={props.state.singlePage} dispatch={props.dispatch}/>}/>
             </div>
         </main>
     );

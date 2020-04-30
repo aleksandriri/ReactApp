@@ -16,7 +16,6 @@ const Comment = (props) => {
         props.dispatch(onSendCommentHeaderActionCreator(CommentHeader));
     };
     let onCommentBodyChange = (comment) => {
-
         let CommentBody = comment.target.value;
         props.dispatch(onSendCommentBodyActionCreator(CommentBody));
     };
