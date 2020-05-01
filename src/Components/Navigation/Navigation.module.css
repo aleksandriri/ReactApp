@@ -28,7 +28,7 @@
     -webkit-box-flex: 0;
     flex-grow: 1;
     max-width: 100%;
-    padding: 40px 20px;
+    padding: 40px 0;
 }
 .navigation__logo{
     text-align: center;
@@ -48,13 +48,16 @@
     text-decoration: none;
 }
 .nav .nav__link{
-    margin: 0 0 20px 0;
+    padding: 20px;
 }
 .nav .nav__link:last-child{
     margin: 0;
 }
+.nav .nav__link span{
+    margin-right: 15px;
+}
 .nav .nav__link.active{
-    color: #53c1de;
+    background: linear-gradient(90deg, #905CFF 0%, #6126DF 100.53%);
 }
 
 .navigation__footer{
