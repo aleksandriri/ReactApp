@@ -1,19 +1,18 @@
 .main__item{
     cursor: pointer;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
 .main__item img{
+    object-fit: fill;
     width: 100%;
     height: 100%;
-    max-width: 230px;
-    max-height: 330px;
 }
 .main__item span{
     display: block;
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
     font-size: 18px;
-    margin-top: 5px;
 }

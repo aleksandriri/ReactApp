@@ -37,13 +37,11 @@ h1{
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-.inner{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.content__inner{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 420px;
+    grid-gap: 1vw;
 }
 .main__inner{
     display: flex;
@@ -52,5 +50,4 @@ h1{
 }
 .main__block__item{
     text-decoration: none;
-    margin: 0 0 35px 0;
 }

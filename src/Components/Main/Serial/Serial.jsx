@@ -12,7 +12,7 @@ const Serial = (props) => {
         )
     });
     return (
-        <div className={'inner'}>
+        <div className={'content__inner'}>
             {BlockElements}
         </div>
     );
