@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Search.module.css'
 import { Button } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import { addBlockActionCreator, onSearchActionCreator } from "../../../../Redux/StateRedux";
+import { addBlockActionCreator, onSearchActionCreator } from "../../../../Redux/FilmReducer";
 
 const Search = (props) => {
     let searchBtn = () => {

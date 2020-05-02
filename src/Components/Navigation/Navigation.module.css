@@ -54,6 +54,9 @@
 .nav .nav__link{
     padding: 20px;
 }
+.nav .nav__link:hover{
+    color: #ffffff;
+}
 .nav .nav__link:last-child{
     margin: 0;
 }
@@ -101,6 +104,9 @@
 .navigation__footer_header span{
     font-size: 26px;
     color: #C2CFE0;
+}
+.navigation__footer_body{
+
 }
 .navigation__footer_body_title{
     font-family: 'Roboto', sans-serif;

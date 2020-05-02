@@ -5,7 +5,7 @@ import {
     addCommentActionCreator,
     onSendCommentHeaderActionCreator,
     onSendCommentBodyActionCreator
-} from "../../../../Redux/StateRedux";
+} from "../../../../Redux/SinglePageReducer";
 
 const Comment = (props) => {
     let addComment = () => {

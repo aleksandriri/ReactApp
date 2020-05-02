@@ -15,14 +15,14 @@
     margin-bottom: 15px;
 }
 .comment__header{
-    color: #ffffff;
+    color: #8CA2BF;
 }
 .comment__body{
     font-size: 18px;
-    color: #ffffff;
+    color: #8CA2BF;
 }
 .comment__like{
-    color: #ffffff;
+    color: #8CA2BF;
     font-size: 18px;
 }
 textarea{

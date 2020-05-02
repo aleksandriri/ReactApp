@@ -4,8 +4,12 @@ import style from './Block.module.css'
 const Block = (props) => {
     return (
         <div className={style.main__item}>
-            <img alt="example" src={props.poster} />
-            <span>{props.name}</span>
+            <div className={style.main__item_poster}>
+                <img alt="example" src={props.poster} />
+            </div>
+            <div className={style.main__item_body}>
+                {props.name}
+            </div>
         </div>
     );
 };

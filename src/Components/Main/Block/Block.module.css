@@ -3,16 +3,20 @@
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    background: #FEFEFE;
+    box-shadow: 0 3px 6px rgb(142, 90, 254);
+    border-radius: 3px;
 }
-.main__item img{
+.main__item_poster img{
     object-fit: fill;
     width: 100%;
     height: 100%;
+    max-width: 140px;
+    max-height: 200px;
 }
-.main__item span{
+.main__item_body{
     display: block;
     font-family: 'Roboto', sans-serif;
-    color: #ffffff;
+    color: #8CA2BF;
     font-size: 18px;
 }

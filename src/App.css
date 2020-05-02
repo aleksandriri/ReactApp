@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 body{
-    background-color: #222;
+    background-color: #ffffff;
 }
 h1{
     margin: 0;
@@ -39,8 +39,7 @@ h1{
 }
 .content__inner{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 420px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1vw;
 }
 .main__inner{
