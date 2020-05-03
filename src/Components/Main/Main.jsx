@@ -9,7 +9,6 @@ import Page from "./Page/Page";
 import Header from "./Heeader/Header";
 import {Route} from 'react-router-dom';
 
-
 const Main = (props) => {
     return (
         <main className={style.main}>

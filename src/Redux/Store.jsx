@@ -2,7 +2,7 @@ import filmReducer from "./FilmReducer";
 import singlePageReducer from "./SinglePageReducer";
 
 let store = {
-    _stateRedux : {
+    _state : {
         filmPage: {
             FilmData: [
                 {
@@ -72,15 +72,15 @@ let store = {
         console.log('State change');
     },
     getState () {
-        return this._stateRedux;
+        return this._state;
     },
     subscribe (observer) {
         this._callSubscriber = observer;
     },
     dispatch (action) {
-        this._stateRedux.headerBlock = filmReducer(this._stateRedux.headerBlock, action);
-        this._stateRedux.singlePage = singlePageReducer(this._stateRedux.singlePage, action)
-        this._callSubscriber(this._stateRedux);
+        this._state.headerBlock = filmReducer(this._state.headerBlock, action);
+        this._state.singlePage = singlePageReducer(this._state.singlePage, action)
+        this._callSubscriber(this._state);
     }
 };
 
