@@ -50,3 +50,27 @@ h1{
 .main__block__item{
     text-decoration: none;
 }
+.ant-carousel .slick-dots{
+    justify-content: flex-start !important;
+}
+.ant-carousel .slick-dots li button{
+    opacity: 1 !important;
+}
+.ant-carousel .slick-dots li.slick-active button{
+    width: 100% !important;
+    height: 8px !important;
+    background: linear-gradient(90deg, #905CFF 0%, #6126DF 100.53%) !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 8px !important;
+}
+.ant-carousel .slick-dots li button{
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+}
+.ant-carousel .slick-dots li.slick-active{
+    width: 40px !important;
+}
+.ant-select{
+    width: 100% !important;
+}

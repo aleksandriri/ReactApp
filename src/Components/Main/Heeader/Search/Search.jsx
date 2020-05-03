@@ -1,31 +1,25 @@
 import React from 'react';
 import style from './Search.module.css'
-import { Button } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
-import { addBlockActionCreator, onSearchActionCreator } from "../../../../Redux/FilmReducer";
+import 'antd/dist/antd.css';
+import { Input, AutoComplete } from 'antd';
+import { onSearchActionCreator } from "../../../../Redux/FilmReducer";
 
 const Search = (props) => {
-    let searchBtn = () => {
-        props.dispatch(addBlockActionCreator());
-    };
     let onSearchChange = (event) => {
         let searchVal = event.target.value;
         props.dispatch(onSearchActionCreator(searchVal));
     };
     return (
         <div className={style.main__search__inner}>
-            <div className={style.search__inner}>
-                <input className={style.search__input}
-                       type="text"
-                       onChange={onSearchChange}
-                       value={props.stateSearch}
+            <AutoComplete >
+                <Input.Search
+                    size="large"
+                    placeholder="Global search"
+                    enterButton
+                    onChange={onSearchChange}
+                    value={props.stateSearch}
                 />
-                <Button className={style.search__btn}
-                        type="primary"
-                        onClick={searchBtn}
-                        icon={<SearchOutlined />}
-                />
-            </div>
+            </AutoComplete>
         </div>
     );
 };
