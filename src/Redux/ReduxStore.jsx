@@ -1,9 +1,9 @@
 import {combineReducers, createStore} from "redux";
-import filmReducer from "./FilmReducer";
+import headerReducer from "./HeaderReducer";
 import singlePageReducer from "./SinglePageReducer";
 
 let reducers = combineReducers({
-    filmPage:filmReducer,
+    filmPage:headerReducer,
     singlePage:singlePageReducer
 });
 

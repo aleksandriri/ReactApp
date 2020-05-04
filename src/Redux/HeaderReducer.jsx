@@ -21,7 +21,7 @@ let initialState = {
     ],
 };
 
-const filmReducer = (state = initialState, action) => {
+const headerReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_NEW_SEARCH_TEXT:
             state.newSearchText = action.newText;
@@ -33,7 +33,6 @@ const filmReducer = (state = initialState, action) => {
                 return responseData;
             };
             getResponse();
-            // state.newSearchText = '';
             return state;
         default: return state;
     }
@@ -45,4 +44,4 @@ export const onSearchActionCreator = (searchVal) => {
     }
 };
 
-export default filmReducer;
+export default headerReducer;

@@ -7,6 +7,7 @@ import store from "./Redux/ReduxStore";
 import {BrowserRouter} from "react-router-dom";
 
 let rerenderEntireTree = (stateRedux) =>{
+    debugger
     ReactDOM.render(
         <BrowserRouter>
             <App state={stateRedux} dispatch={store.dispatch.bind(store)}/>
@@ -17,6 +18,7 @@ let rerenderEntireTree = (stateRedux) =>{
 rerenderEntireTree(store.getState());
 
 store.subscribe(() => {
+    debugger
     let state = store.getState();
     rerenderEntireTree(state);
 });

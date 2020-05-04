@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Search.module.css'
 import 'antd/dist/antd.css';
 import { Input, AutoComplete } from 'antd';
-import { onSearchActionCreator } from "../../../../Redux/FilmReducer";
+import { onSearchActionCreator } from "../../../../Redux/HeaderReducer";
 
 const Search = (props) => {
 

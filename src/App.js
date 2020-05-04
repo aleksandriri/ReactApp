@@ -4,6 +4,7 @@ import Navigation from "./Components/Navigation/Navigation";
 import Main from './Components/Main/Main';
 
 const App = (props) => {
+    debugger
     return (
         <div className="app">
             <div className="app__inner">
