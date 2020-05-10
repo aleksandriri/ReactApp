@@ -1,6 +1,10 @@
 const UPDATE_NEW_SEARCH_TEXT = 'UPDATE-NEW-SEARCH-TEXT';
-let initialState ={
 
+let initialState = {
+    headerBlock : {
+        newSearchText: '',
+        newSearchResult: null
+    }
 };
 const headerReducer = (state = initialState, action) => {
     switch (action.type) {
