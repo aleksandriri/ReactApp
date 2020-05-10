@@ -1,10 +1,12 @@
 import {combineReducers, createStore} from "redux";
 import headerReducer from "./HeaderReducer";
 import singlePageReducer from "./SinglePageReducer";
+import serialReducer from "./SerialReducer";
 
 let reducers = combineReducers({
     filmPage:headerReducer,
-    singlePage:singlePageReducer
+    serialPage:serialReducer,
+    singlePage:singlePageReducer,
 });
 
 let store = createStore(reducers);

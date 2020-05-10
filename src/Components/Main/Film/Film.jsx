@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Film.module.css'
 import Block from '../Block/Block'
-import {NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom"
 
 const Film = (props) => {
     let BlockElements = props.stateFilm.FilmData.map((film) => {

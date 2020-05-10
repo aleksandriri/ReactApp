@@ -5,12 +5,10 @@ import { Input, AutoComplete } from 'antd';
 import { onSearchActionCreator } from "../../../../Redux/HeaderReducer";
 
 const Search = (props) => {
-
     let onSearchChange = (event) => {
         let searchVal = event.target.value;
         props.dispatch(onSearchActionCreator(searchVal));
     };
-
     return (
         <div className={style.main__search__inner}>
             <AutoComplete>

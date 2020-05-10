@@ -20,7 +20,6 @@ let initialState = {
 };
 
 const serialReducer = (state = initialState, action) => {
-    debugger
     return state;
 };
 
