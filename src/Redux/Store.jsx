@@ -1,6 +1,8 @@
 import headerReducer from "./HeaderReducer";
+import filmReducer from "./FilmReducer";
 import serialReducer from "./SerialReducer";
 import singlePageReducer from "./SinglePageReducer";
+
 
 let store = {
     _state : {
@@ -79,8 +81,9 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch (action) {
-        debugger
+
         this._state.headerBlock = headerReducer(this._state.headerBlock, action);
+        this._state.filmPage = filmReducer(this._state.headerBlock, action);
         this._state.serialPage = serialReducer(this._state.serialPage, action);
         this._state.singlePage = singlePageReducer(this._state.singlePage, action);
         this._callSubscriber(this._state);

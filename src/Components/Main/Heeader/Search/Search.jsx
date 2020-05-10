@@ -11,7 +11,7 @@ const Search = (props) => {
     };
     return (
         <div className={style.main__search__inner}>
-            <AutoComplete>
+                <AutoComplete>
                 <Input.Search
                     size="large"
                     placeholder="Global search"
