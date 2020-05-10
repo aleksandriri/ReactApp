@@ -10,7 +10,6 @@ import Header from "./Heeader/Header";
 import {Route} from 'react-router-dom';
 
 const Main = (props) => {
-    debugger
     return (
         <main className={style.main}>
             <Route path='/' render={() => <Header stateSearch={props.state.newSearchText} dispatch={props.dispatch}/>}/>

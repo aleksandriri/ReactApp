@@ -3,7 +3,6 @@ import style from './Header.module.css';
 import Search from "./Search/Search";
 
 const Header = (props) => {
-    debugger
     return (
         <div className={style.main__header}>
             <div className={style.main__header__search}>
