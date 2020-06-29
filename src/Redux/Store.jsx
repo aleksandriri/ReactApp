@@ -69,6 +69,10 @@ let store = {
         // headerBlock : {
         //     newSearchText: ''
         // }
+        fio : {
+            firstName : 'Aleksandr',
+            lastName : 'Heletukha'
+        }
     },
     _callSubscriber () {
         console.log('State change');
