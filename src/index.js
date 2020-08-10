@@ -17,7 +17,6 @@ let rerenderEntireTree = (stateRedux) =>{
 rerenderEntireTree(store.getState());
 
 store.subscribe(() => {
-    debugger
     let state = store.getState();
     rerenderEntireTree(state);
 });

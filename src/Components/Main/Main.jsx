@@ -8,7 +8,6 @@ import Settings from "./Settings/Settings";
 import Page from "./Page/Page";
 import Header from "./Heeader/Header";
 import {Route} from 'react-router-dom';
-import classNames from 'classnames';
 
 const Main = (props) => {
     return (

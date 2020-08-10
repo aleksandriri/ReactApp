@@ -19,9 +19,9 @@ const Comment = (props) => {
         let CommentBody = comment.target.value;
         props.dispatch(onSendCommentBodyActionCreator(CommentBody));
     };
-    let CommentElements = props.stateComment.PageCommentsData.map((comment) => {
+    let CommentElements = props.stateComment.PageCommentsData.map((comment, index) => {
         return (
-            <div className={style.comment__item}>
+            <div className={style.comment__item} key={index}>
                 <h3 className={style.comment__header}>{comment.name}</h3>
                 <p className={style.comment__body}>{comment.comment}</p>
                 <span className={style.comment__like}><HeartTwoTone twoToneColor="#eb2f96" /> {comment.like}</span>
