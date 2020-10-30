@@ -7,7 +7,7 @@ const Film = (props) => {
     let BlockElements = props.stateFilm.FilmData.map((film, index) => {
         return (
             <NavLink className={'main__block__item'} to="/page" key={index}>
-                <Block name={film.name} poster={film.poster} key={index}/>
+                <Block name={film.name} poster={film.poster} key={`${film}_${index}`}/>
             </NavLink>
         );
     });

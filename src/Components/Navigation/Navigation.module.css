@@ -46,7 +46,7 @@
     flex-grow: 1;
 }
 .nav__link{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 21px;
     color: #fff;
     text-decoration: none;
@@ -71,7 +71,7 @@
     margin-bottom: 25px ;
 }
 .navigation__social_title{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     color: #fff;
 }
@@ -109,13 +109,13 @@
 
 }
 .navigation__footer_body_title{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 17px;
     color: #C2CFE0;
     margin: 0 0 5px;
 }
 .navigation__footer_body_link{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;

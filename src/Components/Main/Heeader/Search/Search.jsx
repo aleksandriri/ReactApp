@@ -7,7 +7,6 @@ import { onSearchActionCreator } from "../../../../Redux/HeaderReducer";
 const Search = (props) => {
     let onSearchChange = (event) => {
         let searchVal = event.target.value;
-        // let searchResult =
         props.dispatch(onSearchActionCreator(searchVal));
     };
     return (
