@@ -27,13 +27,13 @@ const Navigation = () => {
                     <NavLink className={style.nav__link} to="/film" activeClassName={style.active}><FolderFilled />Фильмы</NavLink>
                     <NavLink className={style.nav__link} to="/serial" activeClassName={style.active}><FolderFilled />Сериалы</NavLink>
                     <NavLink className={style.nav__link} to="/cartoon" activeClassName={style.active}><FolderFilled />Мультфильмы</NavLink>
-                    <NavLink className={style.nav__link} to="/settings" activeClassName={style.active}><SettingFilled />Настройки</NavLink>
+                    <NavLink className={style.nav__link} to="/settings" activeClassName={style.active}><SettingFilled spin />Настройки</NavLink>
                 </nav>
                 <div className={style.navigation__social}>
                     <p className={style.navigation__social_title}>Social media:</p>
                     <div className={style.navigation__social_wrapper}>
                         <a href="https://www.facebook.com" target="_blank"><FacebookFilled /></a>
-                        <a href="https://www.linkedin.com/" target="_blank"><LinkedinFilled /></a>
+                        <a href="https://www.linkedin.com" target="_blank"><LinkedinFilled /></a>
                         <a href="https://twitter.com" target="_blank"><TwitterSquareFilled /></a>
                     </div>
                 </div>
